@@ -1,7 +1,7 @@
 import { Handle, Position } from 'reactflow';
 
 export default function BaseNode({ title, children, inputs = [], outputs = [] }) {
-   
+
   return (
     <div className="node">
       <div className="node-header">{title}</div>
@@ -31,6 +31,7 @@ export default function BaseNode({ title, children, inputs = [], outputs = [] })
           className="node-handle"
         />
       ))}
+
     </div>
   );
 }
