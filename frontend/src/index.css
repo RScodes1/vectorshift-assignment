@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --node-bg: #ffffff;
+  --node-border: #e5e7eb;
+  --node-header-bg: #f9fafb;
+  --node-text: #111827;
+  --node-accent: #6366f1;
+
+  --radius: 8px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --font-sm: 12px;
+  --font-md: 14px;
+}
+
+.node {
+  background: var(--node-bg);
+  border: 1px solid var(--node-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 200px;
+  font-size: var(--font-md);
+}
+
+.node-header {
+  padding: 8px 10px;
+  background: var(--node-header-bg);
+  border-bottom: 1px solid var(--node-border);
+  font-weight: 600;
+  color: var(--node-text);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.node-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.node input,
+.node select {
+  width: 80%;
+  padding: 4px 6px;
+  font-size: var(--font-sm);
+}
+
+.node-handle {
+  background: var(--node-accent);
+  width: 10px;
+  height: 10px;
+}
+
+.node:hover {
+  border-color: var(--node-accent);
+}
+
+.node input:focus,
+.node select:focus {
+  outline: none;
+  border: 1px solid var(--node-accent);
+}
+
+.react-flow__handle {
+  border: none;
+}

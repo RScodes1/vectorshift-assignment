@@ -1,26 +1,24 @@
 import { Handle, Position } from 'reactflow';
 
 export default function BaseNode({ title, children, inputs = [], outputs = [] }) {
+   
   return (
-    <div style={{ width: 200, border: '1px solid black', padding: 8 }}>
-      
-      <div style={{ fontWeight: 'bold', marginBottom: 8 }}>
-        {title}
-      </div>
+    <div className="node">
+      <div className="node-header">{title}</div>
 
-      <div>
+      <div className="node-body">
         {children}
       </div>
 
       {inputs.map((input) => (
         <Handle
-            key={input.id}
-            type="target"
-            position={input.position || Position.Left}
-            id={input.id}
-            style={input.style}
-            />
-
+          key={input.id}
+          type="target"
+          position={input.position || Position.Left}
+          id={input.id}
+          style={input.style}
+          className="node-handle"
+        />
       ))}
 
       {outputs.map((output) => (
@@ -29,7 +27,8 @@ export default function BaseNode({ title, children, inputs = [], outputs = [] })
           type="source"
           position={output.position || Position.Right}
           id={output.id}
-         style={output.style}
+          style={output.style}
+          className="node-handle"
         />
       ))}
     </div>
