@@ -14,7 +14,7 @@ app.add_middleware(
 
 @app.get('/')
 def read_root():
-    return {'Ping': 'Pong raja'}
+    return {'Ping': 'Pong'}
 
 class Pipeline(BaseModel):
     nodes: List[Dict]
@@ -56,3 +56,8 @@ def parse_pipeline(pipeline: Pipeline):
         "num_edges": num_edges,
         "is_dag": dag
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=10000)
+
