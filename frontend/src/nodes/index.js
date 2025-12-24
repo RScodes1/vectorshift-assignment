@@ -8,11 +8,10 @@ import { LoggerNode } from './dummies/LoggerNode';
 import { TransformNode } from './dummies/TransformNode';
 import { LLMNode } from './llmNode';
 
-
 export const nodeTypes = {
   text: TextNode,
-  input: InputNode,
-  output: OutputNode,
+  customInput: InputNode,
+  customOutput: OutputNode,
   llm: LLMNode,
   condition: ConditionNode,
   delay: DelayNode,
